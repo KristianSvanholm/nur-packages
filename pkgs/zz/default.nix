@@ -1,5 +1,4 @@
 {
-  lib,
   fetchFromGitHub, 
   rustPlatform
 }:
@@ -10,7 +9,7 @@ rustPlatform.buildRustPackage rec {
 
     src = fetchFromGitHub {
         owner = "kristansvanholm";
-        repo = "${pname}";
+        repo = pname;
         rev = "v${version}";
         hash = "sha256-8WFWqAjdHhq0bjdwWNLwvG6vFWSOkxHW8m+qPt46uuw=";
     };
