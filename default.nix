@@ -15,4 +15,5 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   zz = pkgs.callPackage ./pkgs/zz { };
+  p2ptui = pkgs.callPackage ./pkgs/p2ptui {};
 }
