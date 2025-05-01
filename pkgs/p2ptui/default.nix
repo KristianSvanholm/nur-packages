@@ -11,7 +11,7 @@ buildGoModule rec {
     owner = "kristiansvanholm";
     repo = pname;
     rev = "v${version}";
-    hash = "";
+    hash = "sha256-K+0aGTBtE7liLSyUhd14aDBO3qBbyJBUjajrVbAt7FI=";
   };
 
   meta = {
