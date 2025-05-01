@@ -1,16 +1,24 @@
-{ fetchFromGitHub, pkgs ? import <nixpkgs> {} }:
-let manifest = (pkgs.lib.importTOML ./Cargo.toml).package;
-in
-pkgs.rustPlatform.buildRustPackage {
-    pname = manifest.name;
-    version = manifest.version;
+{
+  lib,
+  fetchFromGitHub, 
+  rustPlatform
+}:
 
-    cargoLock.lockFile = ./Cargo.lock;
+rustPlatform.buildRustPackage rec {
+    pname = "zz";
+    version = "0.1";
 
     src = fetchFromGitHub {
         owner = "kristansvanholm";
-        repo = "zz";
-        rev = "5364c425a9216622c9e6a5322f886ec94d87742b";
-        sha256 = pkgs.lib.fakeSha256;
+        repo = "${pname}";
+        rev = "v${version}";
+        hash = "sha256-8WFWqAjdHhq0bjdwWNLwvG6vFWSOkxHW8m+qPt46uuw=";
+    };
+
+    cargoLock.lockFile = "${src}/Cargo.lock";
+
+    meta = {
+        description = "A CLI tool for calculating optimal times to wake up, if you went to bed right now.";
+        homepage = "https://github.com/kristiansvanholm/zz";
     };
 }
