@@ -5,13 +5,13 @@
 
 buildGoModule rec {
   pname = "p2ptui";
-  version = "0.1";
+  version = "0.4";
 
   src = fetchFromGitHub {
     owner = "kristiansvanholm";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-K+0aGTBtE7liLSyUhd14aDBO3qBbyJBUjajrVbAt7FI=";
+    hash = "sha256-d45VCuvQC5K1qQNUYWTW+ouH7gWBhyXtxJGnt21Onic=";
   };
 
   vendorHash = "sha256-Nzh8EpFGg00jBWxkhk3TYmnHzayANe2rJvsZu2g+IAM=";
